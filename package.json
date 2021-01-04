@@ -1,13 +1,17 @@
 {
   "name": "portfolio-angular-app",
   "version": "0.0.0",
+  "homepage": "https://kevgonsalves.github.io/portfolio-angular-app/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "npm run build -- --prod=true --base-href=https://kevgonsalves.github.io/portfolio-angular-app/",
+    "deploy": "@powershell copy dist/portfolio-angular-app/index.html dist/portfolio-angular-app/404.html && gh-pages -d dist/portfolio-angular-app"
+
   },
   "private": true,
   "dependencies": {
@@ -30,6 +34,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",
